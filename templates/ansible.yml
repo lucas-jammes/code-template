@@ -1,0 +1,54 @@
+---
+# Top-level playbook to orchestrate other playbooks
+- name: Orchestrate the Application Deployment
+  import_playbook: webservers.yml
+  import_playbook: dbservers.yml
+
+# Playbook for web server setup
+- hosts: webservers
+  vars:
+    apache_port: 80
+    apache_max_clients: 900
+  tasks:
+    - name: Install Apache packages
+      ansible.builtin.yum:
+        name: httpd
+        state: latest
+      tags: apache
+
+    - name: Start Apache service
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: yes
+      tags: apache
+
+  handlers:
+    - name: Restart Apache
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+
+# Playbook for database server setup
+- hosts: dbservers
+  vars:
+    db_port: 3306
+  tasks:
+    - name: Install MySQL server
+      ansible.builtin.yum:
+        name: mysql-server
+        state: present
+      tags: mysql
+
+    - name: Start MySQL service
+      ansible.builtin.service:
+        name: mysqld
+        state: started
+        enabled: yes
+      tags: mysql
+
+  handlers:
+    - name: Restart MySQL
+      ansible.builtin.service:
+        name: mysqld
+        state: restarted
