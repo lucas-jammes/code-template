@@ -64,7 +64,7 @@ To Do list:
 
 Links can be inserted [as follows](www.google.com "Direct link to Google.com"): `click [here](www.site.com "Don't forget the placeholder!")`.
 
-You can also insert [mailto links](mailto:user@outlook.com "Mail to user")), to create a shortcut to an e-mail application (e.g. Outlook): `contact [Mr Doe](mailto:johndoe@outlook.com "Mail to Mr Doe")`.
+You can also insert [mailto links](mailto:user@outlook.com "Mail to user"), to create a shortcut to an e-mail application (e.g. Outlook): `contact [Mr Doe](mailto:johndoe@outlook.com "Mail to Mr Doe")`.
 
 ## Contributing
 
@@ -135,6 +135,7 @@ Use [nathanfriend.io](https://tree.nathanfriend.io/, "ASCII Tree") to generate f
 
 ## Tables
 
+Tables are very useful for highlighting important information.  
 Use [tablesgenerator.com](https://www.tablesgenerator.com/markdown_tables#) to generate Markdown tables:
 
 |  **Software**  | **Version** |
@@ -145,20 +146,18 @@ Use [tablesgenerator.com](https://www.tablesgenerator.com/markdown_tables#) to g
 
 ## Placeholders
 
-Placeholders brings color to the documentation.  
-Use [place-hold.it](https://place-hold.it/) to insert hex color codes:
+Placeholders can be used to insert images stored online. I mainly use it to insert colors.   
+Use [place-hold.it](https://place-hold.it/) to insert hexadecimal color codes:
 
-- ![008000](https://place-hold.it/10/008000/008000) This is a 10 pixels green square.
-- ![FFA500](https://place-hold.it/15/FFA500/FFA500) This is a 15 pixels orange square.
-- ![FF0000](https://place-hold.it/20/FF0000/FF0000) This is a 20 pixels red square.
+- ![008000](https://place-hold.it/10/008000/008000 "Green") This is a 10 pixels green square.
+- ![FFA500](https://place-hold.it/15/FFA500/FFA500 "Orange") This is a 15 pixels orange square.
+- ![FF0000](https://place-hold.it/20/FF0000/FF0000 "Red") This is a 20 pixels red square.
 
 ## Reflinks
 
 If the link you cant to add is so long that it makes the Markdown code difficult to read, you can use [reflinks][like this].
 
-[like this]: www.google.com "Don't forget the placeholder !"
-
->You need to see the code to see how it works.
+[like this]: www.google.com/ThisIsAnUsefulFeature/EspeciallyWhenTheLinkIs4LinesLong/ThisLinkIsVeryLongIsntIt/? "Placeholder can also be inserted in reflinks !"
 
 ## Graphs
 
@@ -171,3 +170,4 @@ graph TD; %% Defines the graph orientation (Top Down)
   B -- Yes --> C[End]; %% Option Yes from decision node to end
   B -- No --> D[Try Again]; %% Option No leading to another step
   D --> B; %% Loop back to the decision node
+```
