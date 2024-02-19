@@ -1,51 +1,75 @@
-# Project Name
+# Markdown template
 
-## Description
+This file contains useful information to know when writing a Markdown file.  
+This document follows Markdown best practices in term of formatting.  
 
-Brief description of what this project does and who it's for.
+## Table of Contents
 
-```markdown
-  This is a markdown code block to showcase how to include code snippets.
+A simple way of making your documentation more attractive is to add a table of contents.  
+It can be generated automatically by writing `[[_TOC_]]`.
+
+[[_TOC_]]
+
+## Text format
+
+Text can be **bold**, *italic*, or ***bold and italic***. Always use an asterisk `*`.  
+You can also insert headings, in order of priority:
+
+- `#` Main document title
+- `##` Main section
+- `###` Sub-section
+- `####` Specific point
+- `#####` More specific point
+- `######` Most specific point
+
+## Code insertions
+
+Use backticks to insert a block of code:
+
+```python
+  # Don't forget to specify the language when you insert code in a markdown file:
+  print("This is a colored line.")
 ```
 
->This is an example quote.
+Or to mention other technical informations: `path/to/file.csv`.
 
-## Features
+## Quote
 
-Current project features:
+Blockquotes are used to add notes to a paragraph.
 
-- Feature 1
-- Feature 2
-- Feature 3
+>This is a quote.
+>>This is a nested blockquote.
 
-## To Do list
+## Lists
 
-Tasks to complete:
+Unordered list:
+
+- Banana
+- Apple
+- Pear
+
+Ordered list:
+
+1. Strawberry
+2. Grape
+3. Blueberry
+
+To Do list:
 
 - [x] Task 1
 - [x] Task 2
 - [ ] Task 3
 
-## Installation
+## Links
 
-```bash
-# Code block for installation steps
-git clone https://yourproject.git
-cd yourproject
-./install.sh
-```
+Links can be inserted [as follows](www.google.com "Direct link to Google.com"): `click [here](www.site.com "Don't forget the placeholder!")`.
 
-## Usage
+You can also insert [mailto links](mailto:user@outlook.com "Mail to user")), to create a shortcut to an e-mail application (e.g. Outlook): `contact [Mr Doe](mailto:johndoe@outlook.com "Mail to Mr Doe")`.
 
-```python
-# Python code example
-def hello_world():
-    print("Hello, world!")
-```
+## Contributing
 
-## Contribution
-
-Contributions to this project must follow specific Naming Conventions, improving readability and consistency of the project.
+It's important to maintain a consistency within the project when you contribute to it.  
+This is why the Commits and Branches naming conventions have been created.
 
 ### Commits
 
@@ -61,13 +85,13 @@ All commits must follow the [Conventional Commits](https://www.conventionalcommi
 |   perf:   |         Enhance performance.        |
 |   test:   |         Add or update tests.        |
 
-Example commit message: `docs: enhance documentation`
+Example commit message: `docs: update Commits section`
 
 ### Branches
 
 All branches must follow the [Git Branch Naming Convention](https://dev.to/couchcamote/git-branching-name-convention-cch).
 
-1. Code Flow branches
+#### Code Flow branches
 
 | **Name** |       **Description**       |
 |:--------:|:---------------------------:|
@@ -78,7 +102,7 @@ All branches must follow the [Git Branch Naming Convention](https://dev.to/couch
 
 Example branch name: `dev`
 
-2. Temporary branches
+#### Temporary branches
 
 |   **Name**   |       **Description**       |
 |:------------:|:---------------------------:|
@@ -92,22 +116,16 @@ Example branch name: `dev`
 
 Example branch name: `feature/new-feature`
 
-## Fork the Repo
+## Files Structure
 
-1. Create a Feature Branch: `git checkout -b feature/amazing-feature`
-2. Commit your Changes: `git commit -m 'feat: add new AmazingFeature'`
-3. Push to the Branch: `git push origin feature/amazing-feature`
-4. Open a Pull Request
-
-## File Structure
-
-File structures are generated on [nathanfriend.io](https://tree.nathanfriend.io/, "ASCII Tree").
+Displaying the file structure in the documentation is a good way of ensuring project transparency.  
+Use [nathanfriend.io](https://tree.nathanfriend.io/, "ASCII Tree") to generate file structures:
 
 ```bash
 .
 ├── project/
 │   ├── src/
-│   │   ├── module1.py
+│   │   ├── module1.py # You can also add comments
 │   │   └── module2.py
 │   └── tests/
 │       ├── test1.py
@@ -115,12 +133,41 @@ File structures are generated on [nathanfriend.io](https://tree.nathanfriend.io/
 └── README.md
 ```
 
-## Dependency List
+## Tables
 
-Tables are generated on [tablesgenerator.com](https://www.tablesgenerator.com/markdown_tables#).
+Use [tablesgenerator.com](https://www.tablesgenerator.com/markdown_tables#) to generate Markdown tables:
 
-| **Dependency** | **Version** |
+|  **Software**  | **Version** |
 |:--------------:|:-----------:|
 |     Python     |     3.8     |
-|      Flask     |    1.1.2    |
-|     Pandas     |    1.0.5    |
+|     Ansible    |     2.9     |
+|     Docker     |   24.0.9    |
+
+## Placeholders
+
+Placeholders brings color to the documentation.  
+Use [place-hold.it](https://place-hold.it/) to insert hex color codes:
+
+- ![008000](https://place-hold.it/10/008000/008000) This is a 10 pixels green square.
+- ![FFA500](https://place-hold.it/15/FFA500/FFA500) This is a 15 pixels orange square.
+- ![FF0000](https://place-hold.it/20/FF0000/FF0000) This is a 20 pixels red square.
+
+## Reflinks
+
+If the link you cant to add is so long that it makes the Markdown code difficult to read, you can use [reflinks][like this].
+
+[like this]: www.google.com "Don't forget the placeholder !"
+
+>You need to see the code to see how it works.
+
+## Graphs
+
+Displaying a graph can be used for many purposes (explaining algorithmic logic, visualising a process flow, creating a diagram, etc.).  
+The syntax may seem a little complex at first, but once you understand it, the tool comes in very handy:  
+
+```mermaid
+graph TD; %% Defines the graph orientation (Top Down)
+  A[Start Here] --> B{Is it clear?}; %% A node with text leading to a decision node
+  B -- Yes --> C[End]; %% Option Yes from decision node to end
+  B -- No --> D[Try Again]; %% Option No leading to another step
+  D --> B; %% Loop back to the decision node
