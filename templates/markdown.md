@@ -22,16 +22,23 @@ You can also insert headings, in order of priority:
 - `#####` More specific point
 - `######` Most specific point
 
+## Horizontal rules
+
+Use three dashes `---` to insert horizontal rules.  
+This allows you to divide your documentation into several distinct parts.
+
+---
+
 ## Code insertions
 
-Use backticks to insert a block of code:
+Use three backticks `` ``` `` to insert a block of code:
 
 ```python
   # Don't forget to specify the language when you insert code in a markdown file:
   print("This is a colored line.")
 ```
 
-Or to mention other technical informations: `path/to/file.csv`.
+Or use a two backticks to mention other technical informations: `path/to/file.csv`.
 
 ## Quote
 
