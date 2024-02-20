@@ -38,7 +38,7 @@ Use three backticks `` ``` `` to insert a block of code:
   print("This is a colored line.")
 ```
 
-Or use a two backticks to mention other technical informations: `path/to/file.csv`.
+You can also use two backticks to insert other technical information: `path/to/file.csv`.
 
 ## Quote
 
